@@ -1,0 +1,34 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 36, in script
+    e "You've created a new Ren'Py game."
+  File "game/script.rpy", line 36, in script
+    e "You've created a new Ren'Py game."
+Exception: Sayer 'e' is not defined.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
+    renpy.main.main()
+  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\main.py", line 578, in main
+    run(restart)
+  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\main.py", line 143, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\execution.py", line 908, in run_context
+    context.run()
+  File "game/script.rpy", line 36, in script
+    e "You've created a new Ren'Py game."
+  File "game/script.rpy", line 36, in script
+    e "You've created a new Ren'Py game."
+  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\ast.py", line 678, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\ast.py", line 576, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
+Exception: Sayer 'e' is not defined.
+
+Windows-8-6.2.9200
+Ren'Py 7.3.5.606
+Fountain of youth 1.0
+Mon Jan 11 16:52:44 2021

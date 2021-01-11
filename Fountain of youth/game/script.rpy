@@ -38,14 +38,12 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy at slightleft
+    show dad at slightleft
     f "You've created a new Ren'Py game."
 
-    show eileen happy at slightright
+    show dad at slightright
 
     # These display lines of dialogue.
-
-
 
     f "Once you add a story, pictures, and music, you can release it to the world!"
 
