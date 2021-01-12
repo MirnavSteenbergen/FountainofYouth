@@ -39,9 +39,11 @@ label start:
     # directory.
 
     show dad at slightleft
+    show mom at slightright
     f "You've created a new Ren'Py game."
+    m "yh amazing"
 
-    show dad at slightright
+
 
     # These display lines of dialogue.
 
