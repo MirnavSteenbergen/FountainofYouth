@@ -37,13 +37,13 @@ label start:
     # images directory to show it.
     $ renpy.movie_cutscene("Intro_MIND_v02.webm")
 
-    scene bg room
+    scene home_inside2
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show dad at slightleft
+    show dad_m at slightleft
 
     # These display lines of dialogue.
     f "I hope he can do something for her. But when and how did she sin so much to deserve this?"
