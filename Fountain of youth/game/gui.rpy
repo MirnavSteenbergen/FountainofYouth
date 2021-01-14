@@ -23,7 +23,7 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#66cc00'
+define gui.accent_color = '#f2f2f2'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#888888'
@@ -33,7 +33,7 @@ define gui.idle_color = '#888888'
 define gui.idle_small_color = '#aaaaaa'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#a3e066'
+define gui.hover_color = '#78b839'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
@@ -44,8 +44,8 @@ define gui.insensitive_color = '#8888887f'
 
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
-define gui.muted_color = '#285100'
-define gui.hover_muted_color = '#3d7a00'
+define gui.muted_color = '#2b2b2b'
+define gui.hover_muted_color = '#696969'
 
 ## The colors used for dialogue and menu choice text.
 define gui.text_color = '#ffffff'
@@ -113,8 +113,8 @@ define gui.name_xalign = 0.0
 
 ## The width, height, and borders of the box containing the character's name, or
 ## None to automatically size it.
-define gui.namebox_width = None
-define gui.namebox_height = None
+define gui.namebox_width = 100
+define gui.namebox_height = 80
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.

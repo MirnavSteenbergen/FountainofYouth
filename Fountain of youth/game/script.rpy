@@ -3,14 +3,15 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define f = Character("Father")
-define m = Character("Mother")
-define p = Character("Priest")
-define b = Character("Peter")
-define bs = Character("Rowen")
-define u = Character("???")
-define w = Character("Edith")
-define i = Character("Osbert")
+define f = Character("Father", color="#00FFFF")
+define m = Character("Mother", color="#FF00FF")
+define p = Character("Priest", color="#00FFFF")
+define b = Character("Peter", color="#00FFFF")
+define bs = Character("Rowen", color="#00FFFF")
+define uf = Character("???", color="#FF00FF")
+define um = Character("???", color="#00FFFF")
+define w = Character("Edith", color="#FF00FF")
+define i = Character("Osbert", color="#00FFFF")
 define y = Character("You")
 
 
