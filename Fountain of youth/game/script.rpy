@@ -12,7 +12,7 @@ define uf = Character("???", color="#FF00FF")
 define um = Character("???", color="#00FFFF")
 define w = Character("Edith", color="#FF00FF")
 define i = Character("Osbert", color="#00FFFF")
-define y = Character("You")
+define y = Character("[player_name]")
 
 
 # transform locations
@@ -27,10 +27,18 @@ transform slightright:
 # The game starts here.
 
 label start:
+    $ player_name = ""
     # Define variables for test
     $ logos = 0
     $ ethos = 0
     $ pathos = 0
+
+    scene black
+
+    $ player_name = renpy.input("What is your name adventurer?")
+    $ player_name = player_name.strip()
+    if player_name == "":
+        $ player_name = "You"
 
 
     # Show a background. This uses a placeholder by default, but you can
