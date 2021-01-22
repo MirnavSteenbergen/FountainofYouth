@@ -297,7 +297,7 @@ label witch_help:
 
 
 label calculate_ending:
-    scene white
+    scene parchment_bg
     "You are at the end of your journey, what you probably didn't know is that this was a personality test."
     "For each answer you gave in the game we noted down points for either logos, ethos or pathos."
     "By doing this we now know how to influence you to do or buy something."
@@ -390,5 +390,6 @@ label other_outcomes:
 
 # This ends the game.
 label endgame:
+    scene parchment_bg
     "thank you for playing <3"
     return
