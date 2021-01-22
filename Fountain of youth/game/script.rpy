@@ -136,16 +136,16 @@ label at_the_blacksmith:
 
 label I_am_sorry:
     y "Sorry I am late, I will go to work right away."
-    p "Wait a second, you don't get away with it that easily. You can start cleaning the weapons. Make sure they shine by the end of the day"
+    b "Wait a second, you don't get away with it that easily. You can start cleaning the weapons. Make sure they shine by the end of the day"
     y "But that's Rowen's job, I'm not an apprentice anymore."
-    p "You are late, Rowen is doing your job today. You are doing his."
+    b "You are late, Rowen is doing your job today. You are doing his."
 
     hide blacksmith
     "{i}You start working, after cleaning a few weapons Peter walks up to you.{/i}"
     show blacksmith at slightright
 
-    p "The church just announced a community prayer for your mother tonight. No wonder you were late, you should have just told me. I'm sorry I was mean earlier, I didn't know. You can leave early today to be there on time."
-    p "But about that. Yesterday a group of three people came here to pick up some weapons they had us make. They told me they were on their way to find a magical cure for all ailments. Sounds like something that could help your mother..."
+    b "The church just announced a community prayer for your mother tonight. No wonder you were late, you should have just told me. I'm sorry I was mean earlier, I didn't know. You can leave early today to be there on time."
+    b "But about that. Yesterday a group of three people came here to pick up some weapons they had us make. They told me they were on their way to find a magical cure for all ailments. Sounds like something that could help your mother..."
 
     menu:
         "Please tell me more!":
@@ -155,15 +155,15 @@ label I_am_sorry:
 
 label mother_ill:
     y "I am sorry Peter, my mother is gravely ill. The priest came to see her this morning. There will be a community prayer tonight."
-    p "Oh no. Poor Mary... and your father... Is he alright?"
+    b "Oh no. Poor Mary... and your father... Is he alright?"
     y "He is not sick if that's what you're asking but he surely isn't doing well."
 
     hide blacksmith
     "{i}You start working, after cleaning a few weapons Peter walks up to you.{/i}"
     show blacksmith at slightright
 
-    p "The church just announced the community prayer for your mother tonight. You can leave early today to be there on time."
-    p "But about that. Yesterday a group of three people came here to pick up some weapons they had us make. They told me they were on their way to find a magical cure for all ailments. Sounds like something that could help your mother..."
+    b "The church just announced the community prayer for your mother tonight. You can leave early today to be there on time."
+    b "But about that. Yesterday a group of three people came here to pick up some weapons they had us make. They told me they were on their way to find a magical cure for all ailments. Sounds like something that could help your mother..."
 
     menu:
         "Please tell me more!":
@@ -173,12 +173,12 @@ label mother_ill:
 
 label tell_more:
     y "wow! that would be amazing please tell me more!"
-    p "I don't know much more, I only spoke to them briefly. After that they left for the city north of here."
+    b "I don't know much more, I only spoke to them briefly. After that they left for the city north of here."
     jump work
 
 label you_sure:
-    p "I don't know but the church speaks out against using magic all the time. If magic wouldn't exist then why would they address it so often?"
-    p "So I guess a magical cure could definitly exist."
+    b "I don't know but the church speaks out against using magic all the time. If magic wouldn't exist then why would they address it so often?"
+    b "So I guess a magical cure could definitly exist."
 
     menu:
         "Please tell me more":
@@ -190,7 +190,7 @@ label work:
     hide blacksmith
     "{i} You start cleaning weapons again, after you've cleaned all of them Peter comes to talk to you again.{/i}"
     show blacksmith at slightright
-    p "You should go now, it will be evening soon. Go pick up your father for the prayer. You wouldn't want to be late."
+    b "You should go now, it will be evening soon. Go pick up your father for the prayer. You wouldn't want to be late."
     y "Thank you for understanding Peter"
 
     stop sound
