@@ -1,50 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 119, in script
-    "You are at the end of your journey, what you probably didn't know is that this was a personality test."
-  File "renpy/common/000window.rpy", line 98, in _window_auto_callback
-    _window_show()
-  File "renpy/common/000window.rpy", line 60, in _window_show
-    renpy.with_statement(trans)
-IOError: Couldn't find file 'street_town'.
+  File "game/script.rpy", line 145, in script
+    show blacksmith at sightright
+  File "game/script.rpy", line 145, in <module>
+    show blacksmith at sightright
+NameError: name 'sightright' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 119, in script
-    "You are at the end of your journey, what you probably didn't know is that this was a personality test."
-  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\ast.py", line 671, in execute
-    statement_name("say")
-  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\ast.py", line 45, in statement_name
-    i(name)
-  File "renpy/common/000window.rpy", line 98, in _window_auto_callback
-    _window_show()
-  File "renpy/common/000window.rpy", line 60, in _window_show
-    renpy.with_statement(trans)
-  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\exports.py", line 1601, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\display\core.py", line 2251, in do_with
-    clear=clear)
-  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\display\core.py", line 3380, in interact_core
-    renpy.audio.audio.periodic()
-  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\audio\audio.py", line 1060, in periodic
-    six.reraise(exc[0], exc[1], exc[2])
-  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\audio\audio.py", line 1038, in periodic_thread_main
-    periodic_pass()
-  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\audio\audio.py", line 979, in periodic_pass
-    c.periodic()
-  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\audio\audio.py", line 457, in periodic
-    topf = load(self.file_prefix + filename + self.file_suffix)
-  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\audio\audio.py", line 73, in load
-    rv = renpy.loader.load(fn)
-  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\loader.py", line 576, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'street_town'.
+  File "game/script.rpy", line 145, in script
+    show blacksmith at sightright
+  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\ast.py", line 1183, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\ast.py", line 1142, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\mirna\Documents\Ren'py\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 145, in <module>
+    show blacksmith at sightright
+NameError: name 'sightright' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Fountain of youth 1.0
-Tue Jan 19 15:03:59 2021
+Fri Jan 22 17:54:23 2021

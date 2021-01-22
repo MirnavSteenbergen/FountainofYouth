@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 114: expected ':' not found.
-    label walk_to_work
-                      ^
+File "game/script.rpy", line 125: could not parse statement.
+    play music street_town volume 0.5
+                           ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Jan 19 14:51:23 2021
+Fri Jan 22 17:33:44 2021

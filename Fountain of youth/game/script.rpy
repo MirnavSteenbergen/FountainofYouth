@@ -44,9 +44,10 @@ label start:
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
-    $ renpy.movie_cutscene("Intro_MIND_v02.webm")
+    $ renpy.movie_cutscene("Intro_MIND_v03.webm")
 
     scene home_inside2
+    play music roomsound
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -64,7 +65,7 @@ label start:
         "A prayer will help":
             $ pathos += 1
             jump prayer
-        "I don't think he can help her, maybe we should look to a witch":
+        "I don't think he can help her, maybe we should look to a witch.":
             $ logos += 1
             $ ethos += 1
             jump magic
@@ -84,10 +85,10 @@ label faith:
     jump priest_enters
 
 label magic:
-    y "I don't think he can help her, maybe we should look to a witch"
+    y "I don't think he can help her, maybe we should look to a witch."
     f "(whispering) I'll admit it crossed my mind a couple of times, but it would be against the church."
     menu:
-        "The witch could be our last resort":
+        "The witch could be our last resort.":
             jump magic_lr
         "I don't think prayers will heal mother. Finding a witch is our only chance.":
             jump magic_confirmed
@@ -97,7 +98,7 @@ label magic_confirmed:
     f "I worry too, let's do it. But we need need to keep this plan quiet, the church will throw us out if they find out."
 
 label magic_lr:
-    y "The witch could be our last resort father, if the prayers don't help"
+    y "The witch could be our last resort father, if the prayers don't help."
     f "We should keep that idea quiet then, the church would throw us out."
     jump priest_enters
 
@@ -109,18 +110,23 @@ label priest_enters:
     p "I would be able to move her to a hospitality house if you can't take care of her."
     f "Never. I told you this before, I will care for her until the very end."
     "The priest leaves the house."
+    hide priest
     f "You should go to work, there is nothing you can do here and you are late already. Peter is probably worried about you."
+
+    stop music fadeout 1.0
 
 label walk_to_work:
     scene townstreets
-    play music street_town loop
+    play music street_town loop fadein 1.0
 
-    "{i}You walk to work{i}"
-    stop music fadeout 3.0
+    "{i}You walk to work{/i}"
 
 label at_the_blacksmith:
     scene blacksmith_outside
-    b "[name_player], here you are! What happened? I was starting to worry you wouldn't show up at all today."
+    play sound blacksmith loop fadein 1.0
+
+    show blacksmith at slightright
+    b "Here you are! What happened? I was starting to worry you wouldn't show up at all today."
 
     menu:
         "Sorry I am late, I will go to work right away":
@@ -134,7 +140,9 @@ label I_am_sorry:
     y "But that's Rowen's job, I'm not an apprentice anymore."
     p "You are late, Rowen is doing your job today. You are doing his."
 
-    "{i}You start working, after cleaning a few weapons Peter walks up to you.{i}"
+    hide blacksmith
+    "{i}You start working, after cleaning a few weapons Peter walks up to you.{/i}"
+    show blacksmith at slightright
 
     p "The church just announced a community prayer for your mother tonight. No wonder you were late, you should have just told me. I'm sorry I was mean earlier, I didn't know. You can leave early today to be there on time."
     p "But about that. Yesterday a group of three people came here to pick up some weapons they had us make. They told me they were on their way to find a magical cure for all ailments. Sounds like something that could help your mother..."
@@ -150,16 +158,50 @@ label mother_ill:
     p "Oh no. Poor Mary... and your father... Is he alright?"
     y "He is not sick if that's what you're asking but he surely isn't doing well."
 
-    "{i}You start working, after cleaning a few weapons Peter walks up to you.{i}"
+    hide blacksmith
+    "{i}You start working, after cleaning a few weapons Peter walks up to you.{/i}"
+    show blacksmith at slightright
 
     p "The church just announced the community prayer for your mother tonight. You can leave early today to be there on time."
     p "But about that. Yesterday a group of three people came here to pick up some weapons they had us make. They told me they were on their way to find a magical cure for all ailments. Sounds like something that could help your mother..."
-        menu:
-            "Please tell me more!":
-                jump tell_more
-            "Do you think something like that could exist?":
-                jump you_sure
 
+    menu:
+        "Please tell me more!":
+            jump tell_more
+        "Do you think something like that could exist?":
+            jump you_sure
+
+label tell_more:
+    y "wow! that would be amazing please tell me more!"
+    p "I don't know much more, I only spoke to them briefly. After that they left for the city north of here."
+    jump work
+
+label you_sure:
+    p "I don't know but the church speaks out against using magic all the time. If magic wouldn't exist then why would they address it so often?"
+    p "So I guess a magical cure could definitly exist."
+
+    menu:
+        "Please tell me more":
+            jump tell_more
+        "Start working again":
+            jump work
+
+label work:
+    hide blacksmith
+    "{i} You start cleaning weapons again, after you've cleaned all of them Peter comes to talk to you again.{/i}"
+    show blacksmith at slightright
+    p "You should go now, it will be evening soon. Go pick up your father for the prayer. You wouldn't want to be late."
+    y "Thank you for understanding Peter"
+
+    stop sound
+    stop music fadeout 1.0
+
+label tochurch:
+    scene townstreets
+    play music street_town loop
+
+    "{i}You pick up your father, together you walk to the church.{/i}"
+    stop music fadeout 3.0
 
 label calculate_ending:
     scene white
@@ -217,6 +259,7 @@ label calculate_ending:
 
 label logos:
     scene logos_result
+    $ renpy.pause ()
     menu:
         "read other outcomes":
             jump other_outcomes
@@ -225,6 +268,7 @@ label logos:
 
 label ethos:
     scene ethos_result
+    $ renpy.pause ()
     menu:
         "read other outcomes":
             jump other_outcomes
@@ -233,6 +277,7 @@ label ethos:
 
 label pathos:
     scene pathos_result
+    $ renpy.pause ()
     menu:
         "read other outcomes":
             jump other_outcomes
