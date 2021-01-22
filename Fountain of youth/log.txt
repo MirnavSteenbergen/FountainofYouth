@@ -1,39 +1,39 @@
-Tue Jan 19 14:25:07 2021
+Tue Jan 19 15:12:54 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.06s
-Early init took 0.00s
-Loader init took 0.06s
-Loading error handling took 0.02s
-Loading script took 0.17s
-Loading save slot metadata. took 0.02s
+Bootstrap to the start of init.init took 0.14s
+Early init took 0.01s
+Loader init took 0.08s
+Loading error handling took 0.05s
+Loading script took 0.38s
+Loading save slot metadata. took 0.04s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.09s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
+Running init code took 0.20s
+Loading analysis data took 0.06s
+Analyze and compile ATL took 0.01s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\mirna\\AppData\\Roaming/RenPy/backups\\Fountain of youth':
-Dump and make backups. took 0.06s
+Dump and make backups. took 0.12s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.01s
+Initial gc. took 0.03s
 DPI scale factor: 1.250000
-Creating interface object took 0.07s
+Creating interface object took 0.18s
 Cleaning stores took 0.00s
-Init translation took 0.02s
-Build styles took 0.00s
+Init translation took 0.05s
+Build styles took 0.01s
 Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.06s
-Prepare screens took 0.05s
+Analyze screens took 0.04s
+Save screen analysis took 0.15s
+Prepare screens took 0.14s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.05s
+Save bytecode. took 0.15s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.02s
+Interface start took 0.04s
 
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
@@ -292,19 +292,11 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 2.77799987793s
+Total time until interface ready: 4.8029999733s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.018667 seconds.
-- Frame drawn at 0.144667 seconds.
-- Frame drawn at 0.284667 seconds.
-- Frame drawn at 0.420667 seconds.
-- 0.420667 seconds to render 5 frames.
-- Frame drawn at 0.486667 seconds.
-- 0.468000 seconds to render 5 frames.
-- Frame drawn at 0.628667 seconds.
-- 0.484000 seconds to render 5 frames.
-- Frame drawn at 0.698667 seconds.
-- 0.414000 seconds to render 5 frames.
-- Frame drawn at 0.699667 seconds.
-- 0.279000 seconds to render 5 frames.
+- Frame drawn at 0.023667 seconds.
+- Frame drawn at 0.038667 seconds.
+- Frame drawn at 0.041667 seconds.
+- Frame drawn at 0.064667 seconds.
+- 0.064667 seconds to render 5 frames.

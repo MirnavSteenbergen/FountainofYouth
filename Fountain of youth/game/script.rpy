@@ -111,9 +111,58 @@ label priest_enters:
     "The priest leaves the house."
     f "You should go to work, there is nothing you can do here and you are late already. Peter is probably worried about you."
 
+label walk_to_work:
+    scene townstreets
+    play music street_town loop
+
+    "{i}You walk to work{i}"
+    stop music fadeout 3.0
+
+label at_the_blacksmith:
+    scene blacksmith_outside
+    b "[name_player], here you are! What happened? I was starting to worry you wouldn't show up at all today."
+
+    menu:
+        "Sorry I am late, I will go to work right away":
+            jump I_am_sorry
+        "My mother is gravely ill":
+            jump mother_ill
+
+label I_am_sorry:
+    y "Sorry I am late, I will go to work right away."
+    p "Wait a second, you don't get away with it that easily. You can start cleaning the weapons. Make sure they shine by the end of the day"
+    y "But that's Rowen's job, I'm not an apprentice anymore."
+    p "You are late, Rowen is doing your job today. You are doing his."
+
+    "{i}You start working, after cleaning a few weapons Peter walks up to you.{i}"
+
+    p "The church just announced a community prayer for your mother tonight. No wonder you were late, you should have just told me. I'm sorry I was mean earlier, I didn't know. You can leave early today to be there on time."
+    p "But about that. Yesterday a group of three people came here to pick up some weapons they had us make. They told me they were on their way to find a magical cure for all ailments. Sounds like something that could help your mother..."
+
+    menu:
+        "Please tell me more!":
+            jump tell_more
+        "Do you think something like that could exist?":
+            jump you_sure
+
+label mother_ill:
+    y "I am sorry Peter, my mother is gravely ill. The priest came to see her this morning. There will be a community prayer tonight."
+    p "Oh no. Poor Mary... and your father... Is he alright?"
+    y "He is not sick if that's what you're asking but he surely isn't doing well."
+
+    "{i}You start working, after cleaning a few weapons Peter walks up to you.{i}"
+
+    p "The church just announced the community prayer for your mother tonight. You can leave early today to be there on time."
+    p "But about that. Yesterday a group of three people came here to pick up some weapons they had us make. They told me they were on their way to find a magical cure for all ailments. Sounds like something that could help your mother..."
+        menu:
+            "Please tell me more!":
+                jump tell_more
+            "Do you think something like that could exist?":
+                jump you_sure
 
 
 label calculate_ending:
+    scene white
     "You are at the end of your journey, what you probably didn't know is that this was a personality test."
     "For each answer you gave in the game we noted down points for either logos, ethos or pathos."
     "By doing this we now know how to influence you to do or buy something."
@@ -167,7 +216,7 @@ label calculate_ending:
                 jump pathos
 
 label logos:
-    "You are a logos person yay"
+    scene logos_result
     menu:
         "read other outcomes":
             jump other_outcomes
@@ -175,7 +224,7 @@ label logos:
             jump endgame
 
 label ethos:
-    "You are an ethos person yay"
+    scene ethos_result
     menu:
         "read other outcomes":
             jump other_outcomes
@@ -183,7 +232,7 @@ label ethos:
             jump endgame
 
 label pathos:
-    "You are a pathos person yay"
+    scene pathos_result
     menu:
         "read other outcomes":
             jump other_outcomes
