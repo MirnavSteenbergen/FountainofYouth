@@ -201,14 +201,17 @@ label tochurch:
     play music street_town loop
 
     "{i}You pick up your father, together you walk to the church.{/i}"
-    stop music fadeout 3.0
+    stop music fadeout 2.0
 
-    "{i} For the purposes of this demo we now skip to the part where you meet the witch{/i}"
+    "{i} For the purposes of this demo we now skip to the part where you meet the witch about whom you have heard terrifying stories.{/i}"
 
 label witch:
-    "{i}Making your way trough the forest you suddenly hear a shouting voice.{/i}"
+    scene witch_outside
+    play music witch loop
 
-    w "Who goes there?! Who dares enter my woods?! I can hear you, it's no use to hide!"
+    "{i}Making your way trough the forest you suddenly hear a loud voice.{/i}"
+
+    uf "Who goes there?! Who dares enter my woods?! I can hear you, it's no use to hide!"
     menu:
         "Please I mean you no harm. I will come out, just don't hurt me.":
             jump witch1
@@ -219,6 +222,7 @@ label witch:
 
 
 label witch1:
+    show witch at slightright
     uf "There you are! Give me one good reason why I should not turn you into a rabbit right now."
 
     menu:
@@ -243,6 +247,8 @@ label not_scared:
     jump tellher
 
 label tellher:
+    scene witch_inside
+    show witch at slightright
     y "She is getting worse and worse, she is weak and in a lot of pain. The pain in her knees is so bad she can't even stand."
     y "The other townfolks said it would be suicide to come here, to ask for help from a witch. But I had to come even if the odds were slim. I have to take every chance to save my mother."
     w "Before I help you, I want to know. Did you believe them, those townfolks?"
@@ -262,7 +268,8 @@ label no_danger:
     jump w_rant
 
 label w_rant:
-    "So they are still a bunch of dirty untruthful lowlifes I see.... That they would still tell story's like that, it disgusts me. I have been forced into a life of solitude for no better reason than those stories they tell. I have never raised a finger to anyone, I may not be friendly to strangers but what do you expect when everyone is taught to hate you."
+    w "So they are still a bunch of dirty untruthful lowlifes I see.... That they would still tell story's like that, it disgusts me. I have been forced into a life of solitude for no better reason than those stories they tell."
+    w "I have never raised a finger to anyone, I may not be friendly to strangers but what do you expect when everyone is taught to hate you."
     menu:
         "Those people are not as terrible as you think they are.":
             $ pathos += 1
@@ -277,8 +284,11 @@ label w_rant:
 
 label witch_help:
     "{i}Edith is fighting back some tears.{/i}"
-    w "Anyway it is no matter, you dont have the time to talk right now. Forgive me I just dont get many visitors these days. I will give you directions to a place that might help you save your mother. Once your journey is over and your mother is better again, please do me a favor."
+    w "Anyway it is no matter, you dont have the time to talk right now. Forgive me I just dont get many visitors these days."
+    w "I will give you directions to a place that might help you save your mother. Once your journey is over and your mother is better again, please do me a favor."
     w "Come back sometime, I love to deny it but I could use some company every now and then."
+
+    stop music fadeout 2.0
 
     "{i}For the purposes of this demo we will now skip to the end.{/i}"
 
