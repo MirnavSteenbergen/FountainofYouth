@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 212: Menu does not contain any choices.
-    menu:
-         ^
+File "game/options.rpy", line 64: invalid syntax
+    "menu_music.mp3" volume 0.5
+                           ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Jan 22 18:23:30 2021
+Fri Jan 22 21:44:06 2021
