@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 125: could not parse statement.
-    play music street_town volume 0.5
-                           ^
+File "game/script.rpy", line 212: Menu does not contain any choices.
+    menu:
+         ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Jan 22 17:33:44 2021
+Fri Jan 22 18:23:30 2021

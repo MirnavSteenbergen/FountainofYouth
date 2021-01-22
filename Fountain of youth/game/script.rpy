@@ -203,6 +203,89 @@ label tochurch:
     "{i}You pick up your father, together you walk to the church.{/i}"
     stop music fadeout 3.0
 
+    "{i} For the purposes of this demo we now skip to the part where you meet the witch{/i}"
+
+label witch:
+    "{i}Making your way trough the forest you suddenly hear a shouting voice.{/i}"
+
+    w "Who goes there?! Who dares enter my woods?! I can hear you, it's no use to hide!"
+    menu:
+        "Please I mean you no harm. I will come out, just don't hurt me.":
+            jump witch1
+        "You think you can scare me?! I'm not hiding from you, witch":
+            jump witch1
+        "{i}Step out from behind the tree{/i}":
+            jump witch1
+
+
+label witch1:
+    uf "There you are! Give me one good reason why I should not turn you into a rabbit right now."
+
+    menu:
+        "Please don't, my mother has fallen gravely ill and I need your help to cure her. I wouldn't disturb you if it wasn't important.":
+            $ pathos += 1
+            jump scared
+        "I am not scared, I'm here to ask for your help to save my sick mother. If you won't help me I'll find another way.":
+            $ ethos += 1
+            $ logos += 1
+            jump not_scared
+
+label scared:
+    y "Please don't, my mother has fallen gravely ill and I need your help to cure her. I wouldn't disturb you if it wasn't important."
+    uf "Scared are you. Good, at least you know your place. But for someone like you, so easily scared, to enter my forrest."
+    uf "You truly must be on a important quest, so I wont get in your way. But you have made me curious so tell me, what happened to your mother? You can call me Edith by the way."
+    jump tellher
+
+label not_scared:
+    y "I am not scared, I'm here to ask for your help to save my sick mother. If you won't help me I'll find another way."
+    uf "You have a big mouth, I should turn you into a rabbit for talking to me like that. But if your mother is truly sick I wont get in your way.... this time."
+    uf "Though you have made me curious, tell me what happened to your mother. You can call me Edith by the way."
+    jump tellher
+
+label tellher:
+    y "She is getting worse and worse, she is weak and in a lot of pain. The pain in her knees is so bad she can't even stand."
+    y "The other townfolks said it would be suicide to come here, to ask for help from a witch. But I had to come even if the odds were slim. I have to take every chance to save my mother."
+    w "Before I help you, I want to know. Did you believe them, those townfolks?"
+    w "Did you believe them when they said it would be suicide to come here and ask help from a witch? And be honest with me, I can smell lies."
+    menu:
+        "I did believe it was dangerous to come here.":
+            jump danger
+
+        "No, I did not believe it was dangerous to come here.":
+            jump no_danger
+
+label danger:
+    y "They tell stories of witches that have murdered many for seemingly nothing, so yes. I did believe it was dangerous to come here."
+    jump w_rant
+label no_danger:
+    y "I was scared, who would not be. But those stories they tell could just have been just that. Stories. So no, I did not believe it was dangerous to come here."
+    jump w_rant
+
+label w_rant:
+    "So they are still a bunch of dirty untruthful lowlifes I see.... That they would still tell story's like that, it disgusts me. I have been forced into a life of solitude for no better reason than those stories they tell. I have never raised a finger to anyone, I may not be friendly to strangers but what do you expect when everyone is taught to hate you."
+    menu:
+        "Those people are not as terrible as you think they are.":
+            $ pathos += 1
+            $ logos += 1
+            y "Those people are not as terrible as you think they are."
+            jump witch_help
+
+        "You're right, they are horrible people. They shouldn't have done that to you.":
+            $ ethos += 1
+            y "You're right, they are horrible people. They shouldn't have done that to you."
+            jump witch_help
+
+label witch_help:
+    "{i}Edith is fighting back some tears.{/i}"
+    w "Anyway it is no matter, you dont have the time to talk right now. Forgive me I just dont get many visitors these days. I will give you directions to a place that might help you save your mother. Once your journey is over and your mother is better again, please do me a favor."
+    w "Come back sometime, I love to deny it but I could use some company every now and then."
+
+    "{i}For the purposes of this demo we will now skip to the end.{/i}"
+
+
+
+
+
 label calculate_ending:
     scene white
     "You are at the end of your journey, what you probably didn't know is that this was a personality test."
